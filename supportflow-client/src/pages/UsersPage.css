@@ -1,0 +1,406 @@
+.users-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.users-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 28px;
+}
+
+.users-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+}
+
+.users-error {
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.users-card {
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.users-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.users-card-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 17px;
+}
+
+.users-card-header span {
+  display: inline-flex;
+  min-width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.users-table-wrapper {
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.users-table th {
+  background: #f9fafb;
+  color: #6b7280;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.users-table td {
+  color: #374151;
+  font-size: 14px;
+}
+
+.user-role-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.user-role-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.user-no-role {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.user-status {
+  display: inline-flex;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.user-status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.user-status.inactive {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.user-role-button,
+.user-deactivate-button,
+.user-activate-button {
+  padding: 7px 11px;
+  border: none;
+  border-radius: 7px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.user-role-button {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.user-deactivate-button {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.user-activate-button {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.users-empty {
+  padding: 30px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.user-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(17, 24, 39, 0.45);
+}
+
+.user-role-modal {
+  width: min(500px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.2);
+}
+
+.user-role-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-role-modal-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 19px;
+}
+
+.user-role-modal-header p {
+  margin: 4px 0 0;
+  color: #6b7280;
+}
+
+.user-modal-close {
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.user-role-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.user-role-option {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.user-role-option input {
+  margin-top: 3px;
+}
+
+.user-role-option div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.user-role-option strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+.user-role-option span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.user-role-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 20px 20px;
+}
+
+.user-modal-cancel,
+.user-modal-save {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.user-modal-cancel {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.user-modal-save {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.user-modal-save:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.user-modal-save:disabled,
+.user-modal-cancel:disabled,
+.user-role-button:disabled,
+.user-deactivate-button:disabled,
+.user-activate-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-width: 700px) {
+  .user-actions {
+    flex-direction: column;
+  }
+
+  .user-role-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .user-role-modal-actions button {
+    width: 100%;
+  }
+}
+
+.users-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.create-user-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.create-user-button:hover {
+  background: #1d4ed8;
+}
+
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.create-user-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.create-user-field label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.create-user-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+
+.create-user-field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.create-user-role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-user-active {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.create-user-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  font: inherit;
+  outline: none;
+}
+
+.create-user-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}   
+
+
+.user-edit-button {
+  padding: 7px 11px;
+  border: none;
+  border-radius: 7px;
+  background: #f3f4f6;
+  color: #374151;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.user-edit-button:hover {
+  background: #e5e7eb;
+}
+
+.create-user-field small {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.4;
+}
